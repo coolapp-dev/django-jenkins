@@ -69,7 +69,7 @@ JENKINS_TASKS = (
 
 COVERAGE_EXCLUDES = ['tests.test_app.not_for_coverage', ]
 COVERAGE_EXCLUDES_FOLDERS = [  PROJECT_ROOT.joinpath('test_app_dirs/not_for_coverage/'), ]
-(Path(__file__).parent).joinpath('.env')
+
 # JSHINT_CHECKED_FILES = [os.path.join(PROJECT_ROOT, 'static/js/test.js')]
 # CSSLINT_CHECKED_FILES = [os.path.join(PROJECT_ROOT, 'static/css/test.css')]
 
