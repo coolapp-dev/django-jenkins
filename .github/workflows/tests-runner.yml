@@ -25,6 +25,7 @@ jobs:
       run: |
         sudo apt install xvfb
         python -m pip install --upgrade pip setuptools
+        pip install Django>3
         pip install pyvirtualdisplay selenium
         pip install coverage==4.3.4 pylint pep8 pyflakes flake8
     - name: Run Tests
