@@ -68,8 +68,8 @@ JENKINS_TASKS = (
 )
 
 COVERAGE_EXCLUDES = ['tests.test_app.not_for_coverage', ]
-COVERAGE_EXCLUDES_FOLDERS = [os.path.join(PROJECT_ROOT, 'test_app_dirs/not_for_coverage/'), ]
-
+COVERAGE_EXCLUDES_FOLDERS = [  PROJECT_ROOT.joinpath('test_app_dirs/not_for_coverage/'), ]
+(Path(__file__).parent).joinpath('.env')
 # JSHINT_CHECKED_FILES = [os.path.join(PROJECT_ROOT, 'static/js/test.js')]
 # CSSLINT_CHECKED_FILES = [os.path.join(PROJECT_ROOT, 'static/css/test.css')]
 
@@ -78,7 +78,7 @@ PYLINT_LOAD_PLUGIN = (
 )
 
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_ROOT, 'static/'),
+    PROJECT_ROOT.joinpath('static/') ,
 ]
 
 STATIC_URL = '/media/'
