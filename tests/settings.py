@@ -1,6 +1,8 @@
-import os
+from pathlib import Path
 
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -50,6 +52,7 @@ DATABASE_ENGINE = 'sqlite3'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.%s' % DATABASE_ENGINE,
+        'NAME' : PROJECT_ROOT / 'db.sqlite3'
         }
 }
 
