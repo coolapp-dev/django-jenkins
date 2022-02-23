@@ -11,5 +11,7 @@ django_jenkins.egg-info/
 MANIFEST
 geckodriver.log
 
+build/
+.idea/
 
 

@@ -64,11 +64,11 @@ JENKINS_TASKS = (
     'django_jenkins.tasks.run_pylint',
     'django_jenkins.tasks.run_pep8',
     'django_jenkins.tasks.run_pyflakes',
-    'django_jenkins.tasks.run_flake8',
+  #  'django_jenkins.tasks.run_flake8',
 )
 
 COVERAGE_EXCLUDES = ['tests.test_app.not_for_coverage', ]
-COVERAGE_EXCLUDES_FOLDERS = [  PROJECT_ROOT.joinpath('test_app_dirs/not_for_coverage/'), ]
+COVERAGE_EXCLUDES_FOLDERS = [ str( PROJECT_ROOT / 'test_app_dirs/not_for_coverage/' ), ]
 
 # JSHINT_CHECKED_FILES = [os.path.join(PROJECT_ROOT, 'static/js/test.js')]
 # CSSLINT_CHECKED_FILES = [os.path.join(PROJECT_ROOT, 'static/css/test.css')]

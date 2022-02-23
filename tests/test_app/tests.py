@@ -95,6 +95,7 @@ class EXMLTestResultTests(TestCase):
         raise ValueError(u"\N{BIOHAZARD SIGN} Too much \N{HOT BEVERAGE}")
 
 
+@skip('SeleniumTests skipped')
 class SeleniumTests(LiveServerTestCase):
     @classmethod
     def setUpClass(cls):
