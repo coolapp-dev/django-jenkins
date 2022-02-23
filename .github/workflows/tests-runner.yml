@@ -1,0 +1,35 @@
+name: Django CI
+
+on:
+  push:
+    branches: [ development ]
+  pull_request:
+    branches: [ master, development ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python '3.10.x'
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10.1'
+    - uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/CHANGELOG.rst') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - name: Install Dependencies
+      run: |
+        sudo apt install xvfb
+        python -m pip install --upgrade pip setuptools
+        pip install Django>3
+        pip install pyvirtualdisplay selenium
+        pip install coverage==4.3.4 pylint pep8 pyflakes flake8
+    - name: Run Tests
+      run: |
+        cd tests
+        python manage.py migrate
+        python manage.py jenkins --noinput --enable-coverage --output-dir ../

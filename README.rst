@@ -1,3 +1,4 @@
+
 django-jenkins
 ==============
 
@@ -11,6 +12,14 @@ Plug and play continuous integration with Django and Jenkins
 
 .. image:: https://badges.gitter.im/Join%20Chat.svg
         :target: https://gitter.im/kmmbvnr/django-jenkins?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
+This fork:
+------------
+Django4 compability
+ * smart_text import fix
+ * tests fixes
+ * os.path replaced with pathlib
+ * coverage version used: `coverage==4.3.4`
 
 
 Installation
