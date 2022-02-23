@@ -6,7 +6,7 @@ from unittest import TextTestResult
 from xml.etree import ElementTree as ET
 
 from django.test.runner import DiscoverRunner
-from django.utils.encoding import smart_text
+from django.utils.encoding import smart_str as  smart_text
 
 
 class EXMLTestResult(TextTestResult):
